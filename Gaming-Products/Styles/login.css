@@ -5,7 +5,7 @@
 }
 body {
     font-family: 'Orbitron', sans-serif;
-    background: url(/Products/LoginPage\ Background.jpg);
+    background: url(../Images/LoginPage\ Background.jpg);
     background-color: #1b1a1b;
     background-repeat: no-repeat;
     background-size: cover;
