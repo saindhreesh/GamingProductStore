@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MYKD - NFT Collections</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./Gaming-Products/Styles/index.css">
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body id="main">
+  <header>
+    <div class="logo">
+     <h1> MY<span>K</span>D</h1>
+    </div>
+    <div>
+      <button class="hamburger" onclick="toggleMenu()">☰</button>
+    </div>
+    <nav>
+      <a href="#Home">Home</a>
+      <a href="#About">About Us</a>
+      <a href="#Products"> Our Products</a>
+      <a href="#Pages">Pages</a>
+      <a href="#Contact">Contact</a>
+    </nav>
+    <div>
+      <button class="signin-btn" onclick="signin()">SignIn / LogIn</button>
+    </div>
+    
+    <div class="user">
+      <button class="usericon fa-solid fa-user"></button>   
+      <div class="user-buttons" style="display: none;">
+          <button>Account</button>
+          <button onclick="logout()">LogOut</button>
+      </div>
+      <div class="username">Guest</div>
+  </div>
+    <div class="wishlist-item" style="display:none;">
+      <i class='bx bx-cart'></i>
+      <span id="cart-item-no" onclick="openNav()">0</span>
+      <div id="mySidenav" class="sidenav">
+          <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+          <div class="wishlist-product">
+            <h3>Your Cart </h3>
+          </div>
+      </div>
+  </div>
+
+    </div>
+  </header>
+  <section class="hero" id="Home">
+    <video src="./Gaming-Products/Images/old-tree-wukong-game-scene.960x540.mp4" autoplay muted loop></video>
+    <div class="hero-text">
+      <h1>NFT COLLECTIONS</h1>
+      <div class="breadcrumbs">Home / <span>Our Shop</span></div>
+    </div>
+
+  </section>
+  <section class="productContent">
+  <section id="About">
+    <div class="about">
+      
+    <h1>About US</h1>
+    <p>We are a team of passionate specialists with an extensive knowledge of the video game industry.
+      Our task is to make sure that players will be able to enjoy unique and unforgettable games.
+      We’re not  a game company – we’re your game partner!</p>
+      
+    </div><br><br><br> <hr>
+  </section>
+
+  <section id="Products">
+    <h1>Our Products</h1>
+  </section>
+  <section class="filter-show">
+    <button id="filter-show" onclick="toggleFilter()"> Filter</button>
+  </section>
+    <div class="show-results" style="display: none;" >
+      <p>Showing Results : <span class="showing-result"></span></p>
+    </div>
+   <div class="container">
+    <div class="sidebar" id="sidebar-filter" style="display:none;">
+      <h3>Search</h3>
+      <div class="search-box">
+        <input type="text" placeholder="Search here..." id="search-value">
+        <button id="search-button" onclick="showresult()"><i class='bx bx-search-alt bx-flashing' ></i></button>
+      </div>
+      <h3>Filter by Price</h3>
+      <input type="range" id="slider" min="0" max="100" value="50" oninput="updateValue(this.value)">
+      <p>Amount: $<span id="current-value">50</span></p>
+    </div>
+    <section class="main-content" id="content">
+      
+      <div class="product-card">
+        <img src="./Gaming-Products/Images/Nitendo Switch 1.jpg" alt="Nintendo Switch">
+        <h4>Nintendo Switch</h4>
+        <p>$29</p>
+        <div class="wishlist">
+          <p  class="heart"><button class="bunow-para">Buynow</button> </p>
+           <div  ><button class="fas fa-heart heart-button " ></button></div>
+        </div>
+      </div>
+      <div class="product-card">
+        <img src="./Gaming-Products/Images/Nitendo Switch 2.jpg" alt="Nintendo Switch V1 ">
+        <h4>Nintendo Switch V1</h4>
+        <p>$38</p>
+        <div class="wishlist">
+          <p  class="heart"><button class="bunow-para">Buynow</button> </p>
+           <div  ><button class="fas fa-heart heart-button"></button></div>
+        </div>
+      </div>
+      <div class="product-card">
+        <img src="./Gaming-Products/Images/Nitendo Switch.jpg" alt="Nintendo Switch V2.0">
+        <h4>Nintendo Switch V2.0</h4>
+        <p>$46</p>
+        <div class="wishlist">
+          <p  class="heart"><button class="bunow-para">Buynow</button> </p>
+           <div  ><button class="fas fa-heart heart-button" onclick=""></button></div>
+        </div>
+      </div>
+      <div class="product-card">
+        <img src="./Gaming-Products/Images/Headphone.jpg" alt="Boat Gaming HeadSet">
+        <h4>Boat Gaming HeadSet</h4>
+        <p>$26</p>
+        <div class="wishlist">
+          <p  class="heart"><button class="bunow-para">Buynow</button> </p>
+           <div  ><button class="fas fa-heart heart-button" onclick=""></button></div>
+        </div>
+      </div>
+      <div class="product-card">
+        <img src="./Gaming-Products/Images/Headphone 3.jpg" alt="Boat Rog With Mic HeadPhone">
+        <h4>Boat Rog With Mic HeadPhone</h4>
+        <p>$36</p>
+        <div class="wishlist">
+          <p  class="heart"><button class="bunow-para">Buynow</button> </p>
+           <div  ><button class="fas fa-heart heart-button" onclick=""></button></div>
+        </div>
+      </div>
+      <div class="product-card">
+        <img src="./Gaming-Products/Images/headphone 1.jpg" alt="Potronics Gaming Headset">
+        <h4>Potronics Gaming Headset</h4>
+        <p>$20</p>
+        <div class="wishlist">
+          <p  class="heart"><button class="bunow-para">Buynow</button> </p>
+           <div  ><button class="fas fa-heart heart-button" onclick=""></button></div>
+        </div>
+      </div>
+      <div class="product-card">
+        <img src="./Gaming-Products/Images/mouse 3.jpg" alt="Asus ultra level gaming mouse wireless">
+        <h4>Asus ultra level gaming mouse wireless</h4>
+        <p>$29</p>
+        <div class="wishlist">
+          <p  class="heart"><button class="bunow-para">Buynow</button> </p>
+           <div  ><button class="fas fa-heart heart-button"onclick=""></button></div>
+        </div>
+      </div>      
+      <div class="product-card">
+        <img src="./Gaming-Products/Images/mouse1.jpg" alt="Zebronics Gaming wireless Mouse">
+        <h4>Zebronics Gaming wireless Mouse</h4>
+        <p>$20</p>
+        <div class="wishlist">
+          <p  class="heart"><button class="bunow-para">Buynow</button> </p>
+           <div  ><button class="fas fa-heart heart-button"  onclick=""></button></div>
+        </div>
+      </div>      
+      <div class="product-card">
+        <img src="./Gaming-Products/Images/mouse2.jpg" alt="Potronics Gaming Wired Mouse">
+        <h4>Potronics Gaming Wired Mouse</h4>
+        <p>$10</p>
+        <div class="wishlist">
+          <p  class="heart"><button class="bunow-para">Buynow</button> </p>
+           <div  ><button class="fas fa-heart heart-button"  onclick=""></button></div>
+        </div>
+      </div>
+      <div class="product-card">
+        <img src="./Gaming-Products/Images/key1.jpg" alt="Asus ultra level gaming  wireless keyboard and mouse combo">
+        <h4>Asus ultra level gaming  wireless keyboard and mouse combo</h4>
+        <p>$29</p>
+        <div class="wishlist">
+          <p  class="heart"><button class="bunow-para">Buynow</button> </p>
+           <div  ><button class="fas fa-heart heart-button" onclick=""></button></div>
+        </div>
+      </div>      
+      <div class="product-card">
+        <img src="./Gaming-Products/Images/eky2.jpg" alt="Zebronics Gaming wired keyboard">
+        <h4>Zebronics Gaming wired keyboard </h4>
+        <p>$20</p>
+        <div class="wishlist">
+          <p  class="heart"><button class="bunow-para">Buynow</button> </p>
+           <div  ><button class="fas fa-heart heart-button" onclick=""></button></div>
+        </div>
+      </div>     
+       <div class="product-card">
+        <img src="./Gaming-Products/Images/key3.jpg" alt="Potronics Gaming Wiredkeyboard and Mouse combo">
+        <h4>Potronics Gaming Wiredkeyboard and Mouse combo</h4>
+        <p>$50</p>
+        <div class="wishlist">
+           <p  class="heart"><button class="bunow-para">Buynow</button> </p>
+            <div  ><button class="fas fa-heart heart-button" onclick=""></button></div>
+        </div>
+      </div>
+      <div class="no-product">
+          <h2>No Products Found in this Price range .... </h2>
+          <i class='bx bxs-invader bx-flashing' ></i>
+      </div>
+    </section>  
+      <div class="vertical-line"></div>
+      <div class="catagories">
+        <h2>Catagories</h2>
+        <ul>
+          <li><a href="">Nintendo switch</a></li>
+          <li><a href="">Gaming Headphone</a></li>
+          <li><a href="">gaming mouse</a></li>
+          <li><a href="">gaming keyboard</a></li>
+        </ul>
+      </div>
+    </div>
+    </section>
+  
+    <div class="pagination" id="Pages">
+        <button onclick="page1()"><<</button>
+        <button class="active"  onclick="page1()">01</button>
+        <button  onclick="page2()">02</button>
+        <button onclick="page2()">>></button>
+      </div><hr>  
+
+
+  <footer id="Contact">
+    <div class="footer-section">
+      <h4>Quick Links</h4>
+      <p id="socialmedia"><i class='bx bxl-facebook' ></i><i class='bx bxl-google' ></i><i class='bx bxl-instagram' ></i><i class='bx bxl-twitter' ></i><i class='bx bxl-linkedin' ></i></p>
+      <p>Gaming, Product, All NFTs, Social Network</p>
+    </div>
+    <div class="footer-section">
+      <h4>Supports</h4>
+      <p>Setting & Privacy, Help & Support, 24/7 Support</p>
+    </div>
+    <div class="footer-section">
+      <h4>Newsletter</h4>
+      <input type="email" placeholder="Your email address">
+      <button class="subscribe-btn">Subscribe</button>
+    </div>
+    <div class="footer-bottom">
+      &copy; 2024 MYKD. All rights reserved.
+    </div>
+  </footer>
+  
+  <script src="./Gaming-Products/Scripts/ex.js"></script>
+  <script>
+    const userbtn = document.querySelector('.usericon');
+    const username = document.querySelector('.username');
+    const userButtons = document.querySelector('.user-buttons');
+    const signinbtn = document.querySelector('.signin-btn'); // Ensure signinbtn is defined
+
+    // Toggle menu function
+    function toggleMenu() {
+      const nav = document.querySelector('nav');
+      nav.classList.toggle('active');
+    }
+
+    // Open navigation function
+    function openNav() {
+      document.getElementById('mySidenav').style.width = '350px';
+    }
+
+    // Close navigation function
+    function closeNav() {
+      document.getElementById('mySidenav').style.width = '0';
+    }
+   // User Button Toggle
+    userbtn.addEventListener('click', () => {
+        if (username.textContent.trim().toLowerCase() === 'guest') {
+            alert('Guest user cannot access this menu.');
+            userButtons.style.display = 'none';
+        } else {
+            userButtons.style.display = userButtons.style.display === 'block' ? 'none' : 'block';
+            
+          }
+    });
+
+   // Logout functionality
+    function logout() {
+        if (username.textContent.trim().toLowerCase() !== 'guest') {
+            username.textContent = 'Guest';
+            localStorage.removeItem('username');
+            signinbtn.style.display = 'block';
+            document.querySelector('.user-buttons').style.display = 'none';
+        } else {
+            alert('Guest user cannot log out.');
+        }
+    }
+
+    // Prevent Guest from accessing Buynow page
+    const buynowButtons = document.querySelectorAll('.bunow-para');
+
+  
+  </script>
+
+</body>
+</html>

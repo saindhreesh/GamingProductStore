@@ -1,0 +1,864 @@
+html{
+  text-decoration: none;
+}
+body {
+  margin: 0;
+  font-family: 'Orbitron', sans-serif;
+  background-color: #0f1116;
+  color: #fff;
+  text-transform: capitalize;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background-color: #141822;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+header .logo  h1{
+  font-size: 1.5rem;
+  color: #fff;
+}
+header .logo h1 span{
+ color: #00cc6e;
+ font-size: 1.8rem;
+
+}
+.hamburger{
+  display: none;
+}
+nav {
+  display: flex;
+  gap: 15px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s ease, border-bottom 0.3s ease;
+  font-size: 20px;
+}
+
+nav a:hover {
+  color: #00ff88;
+  border-bottom: 2px solid #00ff88;
+}
+
+.signin-btn {
+  background: #00ff88;
+  padding: 10px 20px;
+  border: none;
+  border-top-right-radius: 20px;
+  border-bottom-left-radius: 20px;
+  color: #000;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  font-weight: 700;
+}
+
+.signin-btn:hover {
+  background: #00cc6e;
+}
+#cart-item-no:hover{
+  cursor: pointer;
+}
+.wishlist-item{
+  z-index: 100000;
+}
+
+.wishlist-item i{
+  font-size: 2rem;
+}
+.wishlist-item a{
+  text-decoration: none;
+  color:aqua;
+}
+.hero {
+  position: relative;
+  text-align: center;
+  padding: 200px 20px 40px;
+  padding-top: 30px;
+  background: linear-gradient(to bottom, #0f1116, #141822);
+}
+
+.hero video {
+  position: relative;
+  width: 100%;
+  top: 0;
+  left: 0;
+  opacity: 0.7;
+  height: 500px;
+  object-fit: cover;
+  z-index: 0; /* Lower this to ensure video is behind the text */
+}
+
+.hero .hero-text {
+  position: absolute;
+  font-size: 48px;
+  top: 20%;
+  left:50%;
+  transform: translate(-50%,-50%);
+  margin: auto;
+  z-index: 2; /* Increase this so it appears in front of the video */
+}
+.hero-text h1{
+  font-size: 3.5rem;
+  margin-top: 10rem;
+  text-shadow: 2px 2px 10px #0ef;
+}
+
+.breadcrumbs {
+  position: relative;
+  color: #00ff88;
+  font-size: 18px;
+  text-shadow: 2px 2px 10px #00cc6e;
+}
+.breadcrumbs span{
+  color: orange;
+}
+
+.user .user-buttons button{
+  width: 5rem;
+  color: white;
+  font-size: 1.2rem;
+  margin: 0px 10px;
+  background-color:black;
+  outline: none;
+  border: none;
+
+}
+.user .fa-user{
+  font-size: 1.3rem;
+  border:2px solid #00cc6e;
+  padding: 4px;
+  border-radius: 50%;
+
+}
+.sidenav {
+  height: 100%;
+  width: 0;
+  display: grid;
+  grid-template-columns: auto;
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  right: 0;
+  background-color: #111;
+  overflow-x: scroll;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+#main {
+  transition: margin-left .5s;
+  padding: 16px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+.wishlist-product h3{
+  text-align: center;
+  text-shadow: 0 0 10px #0ef;
+  text-decoration: underline;
+  text-underline-offset: 10px;
+}
+.wishlist-product div {
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #0ef;
+  margin: 10px;
+  margin-top: 20px;
+  text-align: center;
+  border-radius: 30px;
+}
+.wishlist-product div img{
+  border-radius: 20px;
+  box-shadow: 0 0 10px #0ef;
+}
+.wishlist-product div h4{
+  color:rgb(241, 181, 69);
+}
+.wishlist-product div p{
+  color: rgb(238, 240, 238);
+}
+
+.wishlist-product div .remove-btn{
+  padding: 5px;
+  border-radius: 20px;
+  width: 70%;
+  margin-right: 30px;
+  margin-top: 10px;
+  color:Black;
+  font-weight: 500;
+  background-color: rgb(240, 95, 66);
+  cursor: pointer;
+}
+.wishlist-product div .remove-btn:hover{
+  box-shadow: 0 0 10px white;
+  background-color: black;
+  color: aqua;
+}
+#About{
+  position: relative;
+  padding-top: 40px;
+  
+}
+.about h1{
+  color: #0eff;
+  text-align: center;
+  font-size: 1.5rem;
+  margin: auto;
+  padding-bottom: 20px;
+  text-decoration: underline;
+  text-underline-offset: 20px;
+}
+.about img{
+  float: right;
+  margin: 0px 30px;
+  border-top-left-radius: 30px;
+  border-bottom-right-radius: 30px;
+  border: 2px solid #0ef;
+  mask-border-outset: 10px;
+}
+.about p{
+  letter-spacing: 1.5px;
+  margin: 20px;
+  font-size: 1.2rem;
+  line-height: 25px;
+  margin-bottom: 70px;
+}
+#Products{
+  position: relative;
+  margin-top: 50px;
+  
+}
+#Products h1{
+  font-size: 1.5rem;
+  text-align: center;
+  color: aqua;
+  margin: 30px;
+  text-decoration: underline;
+  text-underline-offset: 20px;
+}
+.show-results{
+  position: relative;
+  right: 50px;
+  text-align: end;
+}
+.filter-show{
+  position: relative;
+}
+.filter-show button{
+  position: relative;
+  left: 0rem;
+  padding: 5pxpx;
+  width: 150px;
+  height: 50px;
+  border: 2px solid #0ef;
+  border-radius: 50px;
+  margin-top: 20px;
+  margin-bottom: 50px;
+  margin-left: 30px;
+  background: #141822;
+  color: #0ef;
+}
+.filter-show button:hover{
+  box-shadow: 0 0 20px #0ef;
+  background:black;
+  font-size: 1.1rem;
+  color: #0ef;
+  font-weight: 500;
+}
+
+ .container {
+  display: flex;
+  padding: 40px;
+}
+
+.sidebar {
+  display: none;
+  width: 20%;
+  padding-right: 20px;
+}
+
+.sidebar input[type="range"] {
+  width: 100%;
+}
+.sidebar .search-box{
+  display: flex;
+}
+.search-box button{
+  background:transparent;
+  border: black;
+  cursor: pointer;
+  color: #0ef;
+  font-size: 2rem;
+}
+#end-price{
+  position: relative;
+  margin-left: 140px;
+}
+.no-product{
+  display: none;
+  text-align: center;
+}
+.no-product i{
+  font-size: 3rem;
+}
+.productContent{
+    background: url(https://wallpaperbat.com/img/153756597-aeternum-game-wallpaper-4k-hd-pc-b.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+  
+}
+.main-content {
+  width: 80%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  align-items: center;
+
+}
+
+/* Add hover effect for product-card */
+.product-card {
+  position: relative;
+  overflow: hidden;
+  background-color: #1b1f2a;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0px 0px 10px #0ef;
+}
+
+/* .product-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background: linear-gradient(135deg, rgb(84, 201, 209), #5f6261);
+  transition: width 0.4s ease;
+  z-index: 1;
+}
+
+.product-card:hover::before {
+  width: 100%;
+} */
+/* .product-card img:hover{
+  border: 2px solid rgb(38, 41, 41);
+  box-shadow: 0 0 20px #0f1116;
+} */
+
+.product-card img,
+.product-card h4,
+.product-card p {
+  position: relative;
+  z-index: 2;
+  font-size: 15px;
+}
+
+.product-card img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 30px;
+}
+
+.product-card h4 {
+  margin: 10px 0;
+}
+
+.product-card p {
+  color: #00ff88;
+}
+.catagories{
+  padding-left: 50px;
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+.catagories h2{
+  margin-left: 10px;
+  color:burlywood;
+  text-decoration: underline;
+  text-underline-offset: 20px;
+  
+}
+.catagories ul li  {
+  margin-top: 40px;
+  color: orchid;
+  
+}
+.catagories ul li a{
+  color:rgb(233, 223, 223);
+  text-decoration: none;
+  
+}
+.bunow-para{
+  padding: 5px;
+  border-radius: 20px;
+  width: 70%;
+  font-size: 15px;
+  font-style: italic;
+  margin-right: 30px;
+  color:Black;
+  font-weight: 500;
+  background-color: #0ef;
+  cursor: pointer;
+}
+.bunow-para:hover{
+  box-shadow: 10px 5px 30px #0ef;
+  scale: 1.01;
+  color:aqua;
+  background-color: rgb(35, 26, 26);
+  font-weight: 800;
+  
+}
+.heart i{
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+.wishlist{
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+}
+.wishlist p button{
+  width: 130px;
+}
+.wishlist div button{
+  margin-top: 20px;
+  font-size: 1rem;
+  border: none;
+  background: transparent;
+  color:white;
+  cursor: pointer;
+}
+.heart-button:hover{
+  text-shadow: 0 0 10px orange;
+}
+
+.heart-filled{
+  color: red;
+}
+.pagination {
+  text-align: center;
+  margin: 20px 0;
+  
+}
+
+.pagination button {
+  background: #1b1f2a;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  margin: 0 5px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.pagination button a{
+  text-decoration: none;
+  color: white;
+  font-size: 2rem;
+}
+.pagination button.active {
+  background: #00ff88;
+  color: #000;
+}
+
+.pagination button:hover {
+  background: #00cc6e;
+}
+
+footer {
+  /* background-color: #0f1116; */
+  padding: 40px;
+  color:#818181;
+  text-align: center;
+}
+#socialmedia i{
+  font-size: 2rem;
+  border: 1px solid #818181;
+  border-radius: 50%;
+  margin: 0 20px;
+  padding: 5px;
+}
+#socialmedia i:hover{
+  cursor: pointer;
+  background-color:#0ef ;
+  color:#000;
+  box-shadow: 0 0 20px #0ef;
+}
+
+footer .footer-section {
+  margin-bottom: 20px;
+}
+footer .footer-section h4{
+  text-decoration: underline;
+  text-underline-offset: 5px;
+}
+
+footer .subscribe-btn {
+  background: #00ff88;
+  padding: 5px 10px;
+  border: none;
+  color: #000;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+footer .subscribe-btn:hover {
+  background: #00cc6e;
+} 
+
+
+/* Media Query for Tablets (820px and below) */
+
+@media screen and (max-width: 820px) {
+  body {
+    font-size: 15px;
+    padding: 0 5px;
+    background: linear-gradient(135deg, #141822 60%, #0f1116 100%);
+  }
+  header div {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px;
+    gap: 10px;
+  }
+  nav {
+    display: none;
+    flex-direction: column;
+    background: rgba(20, 24, 34, 0.98);
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100vw;
+    z-index: 1000;
+    padding: 10px 0;
+    box-shadow: 0 8px 24px #0ef2;
+    border-radius: 0 0 20px 20px;
+    transition: all 0.4s cubic-bezier(.4,0,.2,1);
+  }
+  nav a {
+    padding: 14px 24px;
+    border-bottom: 1px solid #333;
+    text-align: center;
+    font-size: 1.2rem;
+    border-radius: 10px;
+    margin: 2px 0;
+    transition: background 0.3s, color 0.3s;
+  }
+  nav a:hover {
+    background: #00ff88;
+    color: #000;
+    box-shadow: 0 0 10px #00ff88;
+  }
+  .signin-btn {
+    padding: 10px 20px;
+    font-size: 1rem;
+    border-radius: 25px;
+    margin-top: 10px;
+    box-shadow: 0 2px 8px #0ef2;
+  }
+  .hamburger {
+    display: block;
+    cursor: pointer;
+    font-size: 2rem;
+    color: #00ff88;
+    background: none;
+    border: none;
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    z-index: 1100;
+    transition: color 0.3s;
+  }
+  .hamburger:hover {
+    color: #fff;
+  }
+  nav.active {
+    display: flex;
+  }
+  .hero {
+    padding: 80px 10px 20px;
+    min-height: 300px;
+  }
+  .hero-text h1 {
+    font-size: 2.2rem;
+    margin-top: 5rem;
+  }
+  .breadcrumbs {
+    font-size: 1rem;
+  }
+  .user .user-buttons button {
+    width: 100%;
+    margin: 8px 0;
+    font-size: 1rem;
+    border-radius: 15px;
+    box-shadow: 0 1px 6px #0ef2;
+  }
+  .wishlist-item i {
+    font-size: 1.5rem;
+  }
+  .wishlist-product div {
+    padding: 10px;
+    margin: 5px;
+    border-radius: 20px;
+  }
+  .product-card {
+    padding: 12px;
+    border-radius: 18px;
+    box-shadow: 0 0 12px #0ef4;
+    margin-bottom: 10px;
+    transition: box-shadow 0.3s;
+  }
+  .product-card:hover {
+    box-shadow: 0 0 24px #00ff8855;
+    background: #23273a;
+  }
+  .product-card h4 {
+    font-size: 1.1rem;
+  }
+  .product-card p {
+    font-size: 1rem;
+  }
+  .bunow-para {
+    font-size: 1rem;
+    padding: 8px;
+    border-radius: 18px;
+    margin: 8px 0;
+    width: 90%;
+    background: linear-gradient(90deg, #0ef 60%, #00ff88 100%);
+    color: #000;
+    font-weight: 700;
+    box-shadow: 0 2px 8px #0ef2;
+  }
+  .bunow-para:hover {
+    background: #23273a;
+    color: #0ef;
+    box-shadow: 0 0 16px #0ef;
+  }
+  .pagination button {
+    padding: 10px 18px;
+    font-size: 1rem;
+    border-radius: 12px;
+  }
+  .container {
+    flex-direction: column;
+    padding: 20px 5px;
+  }
+  .sidebar {
+    width: 100%;
+    margin-bottom: 20px;
+    display: block;
+    background: #1b1f2a;
+    border-radius: 18px;
+    box-shadow: 0 2px 8px #0ef2;
+    padding: 20px 10px;
+  }
+  .main-content {
+    width: 100%;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 15px;
+  }
+  .catagories {
+    padding-left: 0;
+    font-size: 1.2rem;
+    margin-top: 20px;
+  }
+  .catagories h2 {
+    font-size: 1.1rem;
+    margin-left: 0;
+  }
+  .catagories ul li {
+    margin-top: 20px;
+  }
+  footer {
+    padding: 20px;
+    font-size: 0.95rem;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .container {
+    display: block;
+    padding: 10px 2px;
+  }
+  .sidebar {
+    width: 100%;
+    text-align: center;
+    align-items: center;
+    margin: auto;
+    font-size: 15px;
+    margin-bottom: 30px;
+    padding: 10px 5px;
+  }
+  .sidebar input {
+    width: 80%;
+    margin: auto;
+    height: 24px;
+    border-radius: 10px;
+    border: 1px solid #0ef;
+    margin-bottom: 10px;
+  }
+  .main-content {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+  .product-card {
+    padding: 10px;
+    border-radius: 14px;
+    font-size: 0.95rem;
+  }
+  .bunow-para {
+    font-size: 0.95rem;
+    padding: 7px;
+    width: 95%;
+  }
+  .pagination button {
+    padding: 8px 12px;
+    font-size: 0.95rem;
+  }
+  .catagories {
+    font-size: 1rem;
+    padding-left: 0;
+  }
+  .catagories h2 {
+    font-size: 1rem;
+  }
+  .catagories ul li {
+    margin-top: 15px;
+  }
+  .hero-text h1 {
+    font-size: 1.5rem;
+    margin-top: 2rem;
+  }
+  .breadcrumbs {
+    font-size: 0.95rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  body {
+    font-size: 12px;
+    padding: 0 2px;
+    background: #000 !important;
+  }
+  .productContent{
+    background:black;
+  }
+  header {
+    padding: 2px 10px;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .signin-btn{
+    margin:auto;
+    align-items:center;
+    
+  }
+  .username{
+    padding:0;
+    font-size: 1rem;
+    color:aqua;
+  }
+  nav {
+    top: 45px;
+    padding: 5px 0;
+    border-radius: 0 0 12px 12px;
+  }
+  nav a {
+    font-size: 0.95rem;
+    padding: 8px 10px;
+  }
+  .hero video{
+    height:250px;
+  }
+  .signin-btn {
+    padding: 6px 10px;
+    font-size: 0.95rem;
+    border-radius: 15px;
+  }
+  .hero {
+    padding: 30px 2px 5px;
+    min-height: 120px;
+  }
+  .hero-text h1 {
+    font-size: 1.1rem;
+    margin-top: 1.5rem;
+  }
+  .breadcrumbs {
+    font-size: 0.8rem;
+  }
+  .user .user-buttons button {
+    font-size: 0.9rem;
+    padding: 6px 0;
+    border-radius: 10px;
+  }
+  .wishlist-item i {
+    font-size: 1.1rem;
+  }
+  .wishlist-product div {
+    padding: 4px;
+    margin: 35px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 20px #0ef;
+  }
+  .product-card {
+    padding: 20px;
+    border-radius: 10px;
+    font-size: 0.9rem;
+  }
+  .bunow-para {
+    font-size: 0.9rem;
+    padding: 5px;
+    width: 98%;
+    border-radius: 10px;
+  }
+  .pagination button {
+    padding: 5px 8px;
+    font-size: 0.9rem;
+    border-radius: 8px;
+  }
+  .catagories {
+    font-size: 0.9rem;
+    padding-left: 0;
+  }
+  .catagories h2 {
+    font-size: 0.95rem;
+  }
+  .catagories ul{
+    margin-top: 40px;
+  }
+  .catagories ul li {
+    margin-top: 10px;
+  }
+  footer {
+    padding: 8px;
+    font-size: 0.85rem;
+  }
+}

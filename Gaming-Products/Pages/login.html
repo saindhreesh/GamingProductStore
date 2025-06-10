@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login/SignUP</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="../Styles/login.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+       
+    <div class="container" id="container">
+        
+        <div class="formContainer sign-up-container">
+             
+            
+            <form action="#">
+                <h1>Create Account</h1>
+                <div class="social-media-container">
+                    <a href="#"><i class='bx bxl-facebook' ></i></a>
+                    <a href="#"><i class='bx bxl-instagram' ></i></a>
+                    <a href="#"><i class='bx bxl-google' ></i></a>
+                </div>
+                <span>or Use Your email for registraction</span>
+                <input type="text" placeholder="Username" required>
+                <input type="email" placeholder="Email-Id" required>
+                <input type="password" placeholder="Password" required>
+                <input type="password" placeholder="Confirm Password" required>
+                <button type="submit" onclick="signup()">SignUP</button>
+            </form>
+        </div>
+        <div class="formContainer sign-in-container">
+            <a href="../../index.html" id="close"><i class="fa-solid fa-xmark"></i></a>
+            
+            <form action="#">
+                <h1>Sign In</h1>
+                <div class="social-media-container">
+                    <a href="#"><i class='bx bxl-facebook'></i></a>
+                    <a href="#"><i class='bx bxl-instagram'></i></a>
+                    <a href="#"><i class='bx bxl-google'></i></a>
+                </div>
+                <span>or Use Your Account</span>
+                <input type="email" placeholder="Email-Id" required>
+                <input type="password" placeholder="Password" required>
+                <button>SignIn</button>
+            </form>
+        </div>
+        <div class="overlay-container">
+            <div class="overlay">
+                <div class="overlay-panel overlay-left">
+                    <h1>Welcome to MYKD Gaming Website</h1>
+                    <p>If you have Already have a Account Please SignIn</p>
+                    <button class="press" id="signin">SignIn</button>
+                </div>
+                <div class="overlay-panel overlay-right">
+                    <h1>Welcome to MYKD Gaming Website</h1>
+                    <p>Lets Shop, If You Don't have Account Please Create Your Account</p>
+                    <button class="press" id="signup">SignUp</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        const signUpBtn = document.getElementById('signup');
+        const signInBtn = document.getElementById('signin');
+        const container = document.getElementById('container');
+
+        signUpBtn.addEventListener('click',()=>{
+            container.classList.add("right-pannel-active")
+        })
+        signInBtn.addEventListener('click',()=>{
+            container.classList.remove("right-pannel-active")
+        })
+
+        function signup(){
+            const username = document.querySelector('input[placeholder="Username"]').value;
+            const mailid = document.querySelector('input[placeholder="Email-Id"]').value;
+            const password= document.querySelector('input[placeholder="Password"]').value;
+            const confirmpwd = document.querySelector('input[placeholder="Confirm Password"]').value;
+            if(username,mailid){
+                if(password == confirmpwd){
+                    alert('Your Account Has Been Created');
+                    setTimeout(()=>{
+                    localStorage.setItem('username', username);
+                    localStorage.setItem('emailId', mailid);
+                    window.location.href='../../index.html';
+            })
+        }
+                
+            }else{
+                alert('Please fill the details Correctly')
+            }
+            
+        }
+        
+    </script>
+</body>
+</html>

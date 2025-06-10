@@ -1,0 +1,395 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: 'Orbitron', sans-serif;
+    background: url(/Products/LoginPage\ Background.jpg);
+    background-color: #1b1a1b;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    position: relative; /* Required for the overlay */
+}
+
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Black overlay with 50% opacity */
+    z-index: 1; /* Ensure it appears above the background */
+}
+
+.container {
+    position: relative;
+    z-index: 2; /* Ensure content appears above the overlay */
+    background-color: white;
+    width: 768px;
+    max-width: 100%;
+    min-height: 500px;
+    box-shadow: 0px 14px 30px rgba(252, 246, 246, 0.2),
+                0px 10px 10px rgba(230, 218, 218, 0.2);
+}
+.formContainer{
+    position: absolute;
+    top: 0;
+    height: 100%;
+    transition: all 0.6 ease-i;
+    border-radius: 30px;
+}
+.formContainer #close {
+    position: absolute;
+    border: 1px solid black;
+    margin:20px;
+    padding: 5px;
+    color:#FF416C;
+    background-color: rgb(254, 253, 253);
+}
+.sign-up-container{
+    left: 0;
+    width: 50%;
+    z-index: 1;
+    opacity: 0;
+}
+.sign-in-container{
+    left: 0;
+    width: 50%;
+    z-index: 2;
+}
+form{
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0 50px;
+    height: 100%;
+    text-align: center;
+}
+form h1{
+    font-weight: bold;
+    margin: 0;
+}
+
+.social-media-container{
+    margin: 20px 0;
+}
+.social-media-container a{
+    border: 1px solid grey;
+    border-radius: 50%;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0px 5px;
+    height: 40px;
+    width: 40px;
+    
+}
+a{
+    color: #333;
+    text-decoration: none;
+    font-size: 14px;
+    margin: 15px 0;
+}
+a .bxl-facebook{
+    color:blue;
+}
+a .bxl-instagram{
+    color: #FF416C;
+}
+a .bxl-google{
+    color:rgb(119, 240, 119);
+}
+span{
+    font-size: 12px;
+
+}
+input{
+    background-color: #eee;
+    border: none;
+    margin: 8px 0;
+    padding: 6px 12px;
+    width: 100%;
+}
+button{
+    border-radius: 20px;
+    border: 1px solid #ff4b2b;
+    background-color: #ff4b2b;
+    color: white;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 12px 35px;
+    letter-spacing: 1px;
+    text-transform: capitalize;
+    transition: all 0.6 ease-in;
+
+}
+button:hover{
+    cursor: pointer;
+
+}
+.overlay-container{
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 50%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 100;
+    transition:0.6s ease-in-out;
+}
+.overlay{
+    background-color:#FF416C ;
+    background: linear-gradient(to right,#FF4B2B,#FF416C);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 0 0 ;
+    color: white;
+    position: relative;
+    left: -100%;
+    height: 100%;;
+    width: 200%;
+    transform: translateX(0);
+    transition: 0.6s ease-in-out;
+}
+.overlay-panel{
+    position: absolute;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction:column;
+    top: 0;
+    height: 100%;
+    width: 50%;
+    padding: 0px 40px;
+    transform: translateX(0);
+    transition: 0.6s ease-in-out;
+}
+.overlay-left{
+    transform: translateX(-20%);
+}
+.overlay-right{
+    right: 0;
+    transform: translateX(0);
+}
+button:active{
+    transform: scale(.95);
+}
+button.press{
+    background-color: transparent;
+    border-color: white;
+}
+p{
+    font-size: 14px;
+    font-weight: 100;
+    line-height: 20px;
+    letter-spacing: .5px;
+    margin: 20px 0;
+}
+.container.right-pannel-active .sign-in-container{
+    transform: translateX(100%);
+}
+.container.right-pannel-active .sign-up-container{
+    transform: translateX(100%);
+    opacity: 1;
+    z-index: 5;
+    animation: slide 0.6s;
+
+}
+@keyframes slide {
+    0%,49.99%{
+        opacity: 0;
+        z-index: 1;
+    }
+    50%,100%{
+        opacity: 1;
+        z-index: 5;
+    }
+}
+.container.right-pannel-active .overlay-container{
+    transform: translateX(-100%);
+}
+.container.right-pannel-active .overlay{
+    transform: translateX(50%);
+}
+.container.right-pannel-active .overlay-left{
+    transform: translateX(0%);
+}
+.container.right-pannel-active .overlay-right{
+    transform: translateX(20%);
+}
+
+
+/* Media Query for Tablets (768px and below) */
+@media screen and (max-width: 768px) {
+    body {
+      font-size: 14px;
+    }
+  
+    header {
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 10px;
+    }
+  
+    nav {
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+    }
+  
+    nav a {
+      font-size: 14px;
+    }
+  
+    .signin-btn {
+      padding: 8px 16px;
+      font-size: 14px;
+    }
+  
+    .hero {
+      padding: 100px 10px 20px;
+    }
+  
+    .hero-text h1 {
+      font-size: 2.5rem;
+    }
+  
+    .breadcrumbs {
+      font-size: 14px;
+    }
+  
+    .user .user-buttons button {
+      width: 100%;
+      margin: 5px 0;
+    }
+  
+    .wishlist-item i {
+      font-size: 1.5rem;
+    }
+  
+    .wishlist-product div {
+      padding: 10px;
+      margin: 5px;
+    }
+  
+    .product-card {
+      padding: 10px;
+    }
+  
+    .product-card h4 {
+      font-size: 1rem;
+    }
+  
+    .product-card p {
+      font-size: 0.9rem;
+    }
+  
+    .pagination button {
+      padding: 8px 16px;
+      font-size: 14px;
+    }
+  
+    footer {
+      padding: 20px;
+    }
+  
+    footer .footer-section h4 {
+      font-size: 16px;
+    }
+  
+    footer .subscribe-btn {
+      padding: 5px 8px;
+      font-size: 14px;
+    }
+  }
+  
+  /* Media Query for Mobile Devices (480px and below) */
+  @media screen and (max-width: 480px) {
+    body {
+      font-size: 12px;
+    }
+  
+    header {
+      padding: 5px;
+    }
+  
+    nav {
+      flex-direction: column;
+      align-items: center;
+      gap: 5px;
+    }
+  
+    nav a {
+      font-size: 12px;
+    }
+  
+    .signin-btn {
+      padding: 6px 12px;
+      font-size: 12px;
+    }
+  
+    .hero {
+      padding: 50px 5px 10px;
+    }
+  
+    .hero-text h1 {
+      font-size: 2rem;
+    }
+  
+    .breadcrumbs {
+      font-size: 12px;
+    }
+  
+    .user .user-buttons button {
+      width: 100%;
+      margin: 3px 0;
+      font-size: 12px;
+    }
+  
+    .wishlist-item i {
+      font-size: 1.2rem;
+    }
+  
+    .wishlist-product div {
+      padding: 5px;
+      margin: 3px;
+    }
+  
+    .product-card {
+      padding: 5px;
+    }
+  
+    .product-card h4 {
+      font-size: 0.9rem;
+    }
+  
+    .product-card p {
+      font-size: 0.8rem;
+    }
+  
+    .pagination button {
+      padding: 5px 10px;
+      font-size: 12px;
+    }
+  
+    footer {
+      padding: 10px;
+    }
+  
+    footer .footer-section h4 {
+      font-size: 14px;
+    }
+  
+    footer .subscribe-btn {
+      padding: 3px 6px;
+      font-size: 12px;
+    }
+  }
